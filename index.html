@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bếp Ẩm Thực</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <h1 class="text-2xl font-bold text-red-500">🍜 Bếp Ẩm Thực</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-red-500">Trang chủ</a>
+        <a href="#recipes" class="hover:text-red-500">Công thức</a>
+        <a href="#about" class="hover:text-red-500">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-red-100 py-16 text-center">
+    <h2 class="text-4xl font-bold mb-4">Tìm công thức & khám phá món ngon</h2>
+    <p class="mb-6">Từ món ăn gia đình đến đặc sản Việt & Quốc tế, công thức chi tiết và dễ làm.</p>
+    <input id="searchInput" type="text" placeholder="Tìm món ăn..."
+      class="px-4 py-2 rounded-lg w-80 border focus:ring-2 focus:ring-red-400"/>
+  </section>
+
+  <!-- Recipes -->
+  <section id="recipes" class="max-w-6xl mx-auto py-12 px-4">
+    <h3 class="text-2xl font-semibold mb-6">Công thức nổi bật</h3>
+    <div id="recipeGrid" class="grid gap-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+      <!-- JS render -->
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-white py-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-4">Về Bếp Ẩm Thực</h3>
+      <p class="text-gray-600">
+        Chia sẻ công thức đơn giản mà ngon miệng, dành cho người yêu thích nấu nướng và khám phá ẩm thực.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 text-center py-6">
+    <p>© 2025 Bếp Ẩm Thực. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <style>
+  body {
+  font-family: 'Poppins', sans-serif;
+}
+</style>
+ 
+</body>
+</html>
