@@ -8,7 +8,7 @@ const recipes = [
   {
     id: "pho-bo",
     name: "Phở Bò Hà Nội",
-    img: "images/pho-bo.webp",
+    img: "/images/pho-bo.webp",
     desc: "Món ăn truyền thống Việt Nam với hương vị đậm đà, nước dùng thơm ngon.",
     time: "45 phút",
     difficulty: "Trung bình",
@@ -31,7 +31,7 @@ const recipes = [
   {
     id: "banh-mi",
     name: "Bánh Mì Thịt Nướng",
-    img: "images/banh-mi.webp",
+    img: "/images/banh-mi.webp",
     desc: "Ổ bánh mì giòn rụm với thịt nướng thơm lừng, rau dưa chua cay hấp dẫn.",
     time: "25 phút",
     difficulty: "Dễ",
@@ -52,7 +52,7 @@ const recipes = [
   {
     id: "com-tam",
     name: "Cơm Tấm Sườn Bì Chả",
-    img: "images/com-tam.webp",
+    img: "/images/com-tam.webp",
     desc: "Món ăn đặc sản Sài Gòn, đậm đà hương vị với sườn nướng và bì chả thơm ngon.",
     time: "40 phút",
     difficulty: "Trung bình",
@@ -74,7 +74,7 @@ const recipes = [
   {
     id: "goi-cuon",
     name: "Gỏi Cuốn Tôm Thịt",
-    img: "images/goi-cuon.webp",
+    img: "/images/goi-cuon.webp",
     desc: "Món ăn thanh mát, ít dầu mỡ, phù hợp cho bữa nhẹ hoặc ăn kiêng.",
     time: "20 phút",
     difficulty: "Dễ",
@@ -95,7 +95,7 @@ const recipes = [
   {
     id: "bun-bo",
     name: "Bún Bò Huế",
-    img: "images/bun-bo.webp",
+    img: "/images/bun-bo.webp",
     desc: "Đậm đà hương vị miền Trung với sả, mắm ruốc và nước dùng cay nồng.",
     time: "60 phút",
     difficulty: "Khó",
@@ -127,6 +127,18 @@ function fadeTransition(callback) {
     setTimeout(() => appRoot.classList.remove("fade-in"), 400);
   }, 400);
 }
+.fade-out { opacity: 0; transition: opacity 0.4s ease; }
+.fade-in { opacity: 1; transition: opacity 0.4s ease; }
+
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,0.8); color: #fff; padding: 10px 20px;
+  border-radius: 10px; opacity: 0; transition: opacity .3s ease;
+}
+.toast.show { opacity: 1; }
+
+.btn { background: #f87171; color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
+.btn:hover { background: #ef4444; }
 
 function showToast(message) {
   const toast = document.createElement("div");
@@ -231,7 +243,11 @@ function saveRecipe(id) {
 
 // 6️⃣ FORM NEWSLETTER GIẢ LẬP
 function initNewsletter() {
-  const form = document.getElementById("newsletter-form");
+<form id="newsletter-form" class="mt-8 flex gap-2 justify-center">
+  <input type="email" placeholder="Nhập email..." class="border rounded px-3 py-2" />
+  <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Đăng ký</button>
+</form>
+
   if (!form) return;
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -269,6 +285,18 @@ window.addEventListener("DOMContentLoaded", () => {
 .btn { background: #f87171; color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
 .btn:hover { background: #ef4444; }
 */
+//rating//
+const rating = document.getElementById("ratingContainer");
+if (rating) {
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("span");
+    star.textContent = "⭐";
+    star.classList.add("cursor-pointer");
+    star.onclick = () => showToast(`Bạn đánh giá ${i} sao!`);
+    rating.appendChild(star);
+  }
+}
+
 
 
 
