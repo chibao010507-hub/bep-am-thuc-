@@ -31,10 +31,15 @@
         🖨️ In công thức
       </button>
 
-      <!-- Rating -->
-      <div class="flex items-center space-x-1" id="ratingContainer">
-        <span class="mr-2 text-gray-700">Đánh giá:</span>
-      </div>
+     <style>
+   const ratingContainer = document.getElementById('ratingContainer');
+for(let i=1;i<=5;i++){
+  const star = document.createElement('button');
+  star.textContent = '⭐';
+  star.addEventListener('click', ()=> alert(`Bạn đánh giá ${i} sao!`));
+  ratingContainer.appendChild(star);
+}
+</style>
     </div>
   </section>
 
@@ -46,3 +51,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
